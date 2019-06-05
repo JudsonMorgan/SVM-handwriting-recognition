@@ -49,8 +49,8 @@ def reshape_function(im_array=None, filename=None):
 
     # im.save(filename[:-4] + '.jpeg', "JPEG")
 
-    im = im.resize((8, 8), Image.ANTIALIAS)  # .save(filename[:-4] + '.jpeg', "JPEG")
-    return np.asarray(im).reshape(1, 64)
+    im = im.resize((12, 12), Image.ANTIALIAS)  # .save(filename[:-4] + '.jpeg', "JPEG")
+    return np.asarray(im).reshape(1, 12 * 12)
 
 
 folder_name = 'by_class'
@@ -75,7 +75,8 @@ for folder_1 in list_folders_1:
     for folder_2 in list_folders_2:
         list_files_3 = [name for name in os.listdir(folder_name + "/" + folder_1 + "/" + folder_2) if os.path.isfile(folder_name + "/" + folder_1 + "/" + folder_2 + "/" + name)]
         print(folder_name + "/" + folder_1 + "/" + folder_2)
-        for files_3 in list_files_3:
+        list_files_3_rand = np.random.choice(list_files_3, 20, replace=False)
+        for files_3 in list_files_3_rand:
             patch_file = folder_name + "/" + folder_1 + "/" + folder_2 + "/" + files_3
             im_array = np.asarray(Image.open(patch_file).convert('L'))
             try:
