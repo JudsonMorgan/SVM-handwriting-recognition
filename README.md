@@ -1,7 +1,7 @@
 # SVM-handwriting-recognition
 Project involving Support Vector Machine to classificate handwriting letters from NIST Special Database 19. <br>
 <br>
-## Sseps todo: <br>
+## Steps todo: <br>
 1. Download dataset from: https://s3.amazonaws.com/nist-srd/SD19/by_class.zip <br>
 2. Unzip it <br>
 3. Run resize_alphabet.py - it will centered photos at sign and change the resolution to 12x12 pixels and chose about 1500 of examples for each sign (randomly) <br>
